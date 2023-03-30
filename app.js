@@ -11,7 +11,7 @@ class Calculator {
   }
 
   delete() {
-
+    this.currentOperand = this.currentOperand.toString.slice(0, -1)
   }
   appendNumber(number) {
     if (number === '.' && this.currentOperand.includes('.')) return
@@ -91,7 +91,12 @@ equalsButton.addEventListener('click', button => {
   calculator.updateDisplay()
 })
 
-allClerButton.addEventListener('click', button => {
+allClearButton.addEventListener('click', button => {
+  calculator.clear()
+  calculator.updateDisplay()
+})
+
+deleteButton.addEventListener('click', button => {
   calculator.clear()
   calculator.updateDisplay()
 })
